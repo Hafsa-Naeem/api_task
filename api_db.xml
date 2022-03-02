@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.1.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Mar 02, 2022 at 07:38 AM
+- Server version: 10.4.22-MariaDB
+- PHP Version: 8.1.2
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="api_db" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="property_data">
+                CREATE TABLE `property_data` (
+                  `PropertyID` int(11) NOT NULL AUTO_INCREMENT,
+                  `County` varchar(30) NOT NULL,
+                  `Country` varchar(30) NOT NULL,
+                  `Town` varchar(35) NOT NULL,
+                  `DisplayableAddress` varchar(75) NOT NULL,
+                  `Latitude` decimal(50,0) NOT NULL,
+                  `Longitude` decimal(50,0) NOT NULL,
+                  `Number_of_Bedrooms` int(2) NOT NULL,
+                  `Number_of_Bathrooms` int(2) NOT NULL,
+                  `Price` decimal(15,0) NOT NULL,
+                  `ForSale_ForRent` varchar(10) NOT NULL,
+                  `Prop_Type` varchar(90) NOT NULL,
+                  PRIMARY KEY (`PropertyID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="property_details">
+                CREATE TABLE `property_details` (
+                  `Property_type_id` int(10) NOT NULL,
+                  `Description` text NOT NULL,
+                  `Property_type_description` text NOT NULL,
+                  `Image` text NOT NULL,
+                  `Thumbnail` text NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+</pma_xml_export>
